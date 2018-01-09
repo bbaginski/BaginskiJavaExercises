@@ -20,16 +20,50 @@ function EX2() {
 		EnteredWord = prompt("Enter a Word.");
 		var FinalWord = FinalWord.concat(" " + EnteredWord); 
 	}
-	while (confirm("Do you want to play?") == true) 
+	while (confirm("Do you want to continue to play?") == true) 
 	console.log(FinalWord);
 }
 
 
-function EX3() {
+function EX3() {	
+	var EnteredName = prompt("Would you like to print your name? Please enter it.");	 
+	var i = 1;
+	if (EnteredName != null) {
+		console.log("Hello. My name is " + EnteredName);
+		
+		while (confirm("Would you like to print again?") == true)  {
+			EnteredName = EnteredName + "!";
+			console.log("Hello. My name is " + EnteredName);	
+		}
+		
+	}
 	
 }
 
 
 function EX4() { 
-
+	var x = false;	
+	while (x == false)  {			
+		var EnteredTime = prompt("What time of day is it? (morning, noon, or evening)"); 
+		if (EnteredTime != null) {
+			switch(EnteredTime.toLowerCase()) {
+				case "morning": 
+					console.log("Since it is morning, you should be eating breakfast. We suggest eggs and toast.");
+					x = true;
+					break;
+				case "noon": 
+					console.log("Since it is noon, you should be eating lunch. We suggest a salad.");					
+					x = true;
+					break;
+				case "evening": 
+					console.log("Since it is evening, you should be eating dinner. We suggest chicken and rice.");
+					x = true;
+					break;
+				default:
+					alert("Please enter one of the suggested times!")
+			}
+		} else{			
+			x = true;
+		}			
+	}	
 }
