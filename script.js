@@ -10,17 +10,22 @@ function EX1() {
 		total += i;
 	};
 	console.log("Your Lucky Number is: " + total);
-	alert("Your Lucky Number is: " + total);
+	alert("Your Lucky Number is: " + total)
 }
 
 function EX2() {
 	var EnteredWord = "";
 	var FinalWord = "";
 	do{
-		EnteredWord = prompt("Enter a Word.");
-		var FinalWord = FinalWord.concat(" " + EnteredWord); 
+		EnteredWord = prompt("Enter a Word."); 
+		if (EnteredWord != "") {
+			FinalWord = FinalWord.concat(" " + EnteredWord); 
+		} else{
+			FinalWord = FinalWord.concat(" " + "???");  
+		}
 	}
 	while (confirm("Do you want to continue to play?") == true) 
+	alert('GAME OVER');
 	console.log(FinalWord);
 }
 
@@ -28,15 +33,16 @@ function EX2() {
 function EX3() {	
 	var EnteredName = prompt("Would you like to print your name? Please enter it.");	 
 	var i = 1;
-	if (EnteredName != null) {
-		console.log("Hello. My name is " + EnteredName);
-		
+	if (EnteredName != "") {
+		console.log("Hello. My name is " + EnteredName);		
 		while (confirm("Would you like to print again?") == true)  {
 			EnteredName = EnteredName + "!";
 			console.log("Hello. My name is " + EnteredName);	
-		}
+		};
 		
-	}
+	} else(
+		alert("No Name Entered, Print Canceled.")
+	)
 	
 }
 
@@ -60,7 +66,7 @@ function EX4() {
 					x = true;
 					break;
 				default:
-					alert("Please enter one of the suggested times!")
+					alert("Please enter one of the suggested times!");
 			}
 		} else{			
 			x = true;
